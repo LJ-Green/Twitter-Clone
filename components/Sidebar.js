@@ -1,4 +1,6 @@
+import { auth } from "@/firebase";
 import { closeLoginModal, closeSignupModal } from "@/redux/modalSlice";
+import { signOutUser } from "@/redux/userSlice";
 import {
   HomeIcon,
   HashtagIcon,

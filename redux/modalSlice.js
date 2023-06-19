@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   signupModalOpen: false,
@@ -9,10 +9,11 @@ const initialState = {
     id: null,
     tweet: null,
     photoUrl: null,
-    name: null,
-    username: null
+    name: null, 
+    username: null,
+
   }
-}
+};
 
 const modalSlice = createSlice({
   name: "modal",
@@ -30,6 +31,7 @@ const modalSlice = createSlice({
     closeLoginModal: (state) => {
       state.loginModalOpen = false;
     },
+
     openCommentModal: (state) => {
       state.commentModalOpen = true;
     },
@@ -38,23 +40,24 @@ const modalSlice = createSlice({
     },
 
     setCommentTweet: (state, action) => {
-      state.commentTweetDetails.username = action.payload.username,
-      state.commentTweetDetails.name = action.payload.name,
-      state.commentTweetDetails.id = action.payload.id,
-      state.commentTweetDetails.photoUrl = action.payload.photoUrl
-      state.commentTweetDetails.photoUrl = action.payload.tweet
+        state.commentTweetDetails.username = action.payload.username,
+        state.commentTweetDetails.name = action.payload.name,
+        state.commentTweetDetails.id = action.payload.id,
+        state.commentTweetDetails.photoUrl = action.payload.photoUrl
+        state.commentTweetDetails.tweet = action.payload.tweet
+
     }
-  }
+  },
 });
 
 export const {
-  openSignupModal, 
-  closeSignupModal, 
-  openLoginModal, 
+  openSignupModal,
+  closeSignupModal,
+  openLoginModal,
   closeLoginModal,
   openCommentModal,
   closeCommentModal,
   setCommentTweet
 } = modalSlice.actions;
 
-export default modalSlice.reducer
+export default modalSlice.reducer;
